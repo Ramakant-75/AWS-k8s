@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: webapp
-  type: ClusterIP
+  type: NodePort
   sessionAffinity: None
   sessionAffinityConfig:
     clientIP:
@@ -15,7 +15,8 @@ spec:
   - name: webapp
     protocol: TCP
     port: 80
-    targetPort: 80 
+    targetPort: 80
+    nodePort: 30080 
     # If you set the `spec.type` field to `NodePort` and you want a specific port number,
     # you can specify a value in the `spec.ports[*].nodePort` field.
     
